@@ -4,32 +4,17 @@ import "./database"
 
 // Importamos o express pra dentro deste arquivo
 import express from 'express';
-
+import { router } from './routes';
 
 // Iniciou uma instancia do express
 const app = express();
 
-// Definindo o metodo get para a rota 
-// localhost:3333/
-app.get("/", (request, response) => {
-  return response.json({message: "Hello World - NLW #04"});
-})
+// Habilitando o uso de JSON no express
+app.use(express.json());
 
-// Definindo o metodo post para a rota 
-// localhost:3333/
-app.get("/twitch", (request, response) => {
-  return response.json({
-    message: "Siga o canal do Tonelive na twitch", 
-    link: "https://www.twitch.tv/tonelive"});
-})
-
-// Definindo o metodo post para a rota 
-// localhost:3333/
-app.post("/", (request, response) => {
-  return response.json({message: "Os dados foram salvos com sucesso!"});
-})
-
-
+// Utilizando o router do arquivo externo
+// para passar as rotas criadas
+app.use(router);
 
 // Criando o servidor na porta 3333
 // Acessar pelo link: localhost:3333
