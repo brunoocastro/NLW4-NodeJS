@@ -1,5 +1,10 @@
+// Importando o Banco de dados
+import 'reflect-metadata';
+import "./database"
+
 // Importamos o express pra dentro deste arquivo
 import express from 'express';
+
 
 // Iniciou uma instancia do express
 const app = express();
