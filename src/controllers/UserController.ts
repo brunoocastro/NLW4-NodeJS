@@ -27,7 +27,7 @@ class UserController {
 
     console.log(`O email ${email} foi registrado com sucesso.`);
     
-    return response.json(user);
+    return response.status(201).json(user);
   }
 };
 
